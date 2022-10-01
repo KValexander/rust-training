@@ -49,3 +49,15 @@ fn change_string(s : &mut String) {
 fn calculate_length(s : &String) -> usize {
     s.len()
 }
+
+/* Dangling - error, doesn't work */
+// fn dangle() -> &String {
+//     let s = String::from("String");
+//     &s
+// }
+
+/* No dangle - success */
+fn no_dangle() -> String {
+    let s = String::from("String");
+    s
+}
