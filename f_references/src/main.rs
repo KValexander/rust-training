@@ -37,6 +37,30 @@ fn main() {
     
     /* Out */
     println!("The length of '{s1}' is {len}");
+
+    /*  Slice
+            examples:
+                let s = String::from("Hello world");
+                
+                let hello = &s[0..5]; // hello = "hello"
+                    let hello = &s[..5];
+                
+                let world = &s[6..11]; // world = "world"
+                    let world = &s[6..];
+
+                let hw = &s[..]; // hw = "Hello world"
+                
+                println!("{s} {hello} {world} {hw}");
+
+                let a = [1, 2, 3, 4, 5];
+                let slice = &a[1..3];
+                assert_eq!(slice, &[2, 3]);
+    */
+
+    let s = String::from("Hello world");
+    let word = first_word(&s);
+    println!("The first word: {word}");
+
 }
 
 /* Change string */
@@ -57,7 +81,20 @@ fn calculate_length(s : &String) -> usize {
 // }
 
 /* No dangle - success */
-fn no_dangle() -> String {
-    let s = String::from("String");
-    s
+// fn no_dangle() -> String {
+//     let s = String::from("String");
+//     s
+// }
+
+/* First word */
+fn first_word(s : &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[..i];
+        }
+    }
+
+    &s[..]
 }

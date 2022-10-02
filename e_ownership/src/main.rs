@@ -2,6 +2,9 @@
 fn main() {
 
     /*  String
+            let str = "Str"; // data type - &str
+            let s = String::from("String"); // data type -  String
+
             methods:
                 string.push_str("") - appends string to the end
                 string.clone() - string cloning

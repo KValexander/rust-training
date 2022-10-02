@@ -11,9 +11,9 @@ fn main() {
                 let mut i = 5;
                 i = 6; // success
         
-        without type - standart 64bit
+        without type - standart 32bit or 64bit
             example:
-                let i = 5; // integer 64bit
+                let i = 5; // integer 32-64bit
                 let i : u32 = 5; // unsigned integer 32bit
 
         const - always with type, always immutable
@@ -22,7 +22,7 @@ fn main() {
 
         i/8/16/32/64/128/size - number signed - my be negative
             example:
-                let i = 5; // integer 64bit
+                let i = 5; // integer 32-64bit
                 let i : i32 = 5; // integer 32bit
                 let i : isize = 5;
         
