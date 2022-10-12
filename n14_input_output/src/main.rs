@@ -21,11 +21,13 @@ use n14_input_output::Config;
 /* Entry point */
 fn main() {
     /* Collection arguments from the console */
-    let args: Vec<String> = env::args().collect();
+    // let args: Vec<String> = env::args().collect();
     // dbg!(args);
 
     /* Parse arguments */
-    let config = Config::build(&args).unwrap_or_else(|err| {
+    // let config = Config::build(&args).unwrap_or_else(|err| {
+    /* With iterator */
+    let config = Config::build(env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing arguments: {err}");
         process::exit(1);
     });
